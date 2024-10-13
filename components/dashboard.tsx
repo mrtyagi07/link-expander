@@ -59,9 +59,9 @@ export function Dashboard() {
 	return (
 		<div className="min-h-screen bg-background text-foreground p-4">
 			<header className="border-b mb-6">
-				<div className="container mx-auto py-4 flex items-center justify-around">
+				<div className="container mx-auto py-4 flex flex-col sm:flex-row items-center justify-between">
 					<motion.div
-						className="flex items-center space-x-2 mr-4"
+						className="flex items-center space-x-2 mb-4 sm:mb-0"
 						initial={{ opacity: 0, x: -20 }}
 						animate={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.5 }}
@@ -69,29 +69,40 @@ export function Dashboard() {
 						<Zap className="h-6 w-6" />
 						<span className="text-2xl font-semibold">LinkPower</span>
 					</motion.div>
-					<div className="flex-1 max-w-2xl relative">
-						<Input
-							type="text"
-							placeholder="Enter shortened link..."
-							className="w-full pl-10 pr-24 py-2 text-base"
-							value={inputUrl}
-							onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-								setInputUrl(e.target.value)
-							}
-						/>
-						<Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
-						<Button
-							disabled={isLoading}
-							onClick={handleExpand}
-							variant="default"
-							size="sm"
-							className="absolute right-1 top-1/2 transform -translate-y-1/2"
-						>
-							Expand
-						</Button>
-					</div>
+					<Link
+						href="https://x.com/mrtyagi07"
+						target="_blank"
+						prefetch={false}
+						className="text-muted-foreground hover:text-foreground transition-colors text-sm"
+					>
+						@mrtyagi07
+					</Link>
 				</div>
 			</header>
+
+			<div className="container mx-auto mb-6">
+				<div className="relative max-w-2xl mx-auto">
+					<Input
+						type="text"
+						placeholder="Enter shortened link..."
+						className="w-full pl-10 pr-24 py-2 text-base"
+						value={inputUrl}
+						onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+							setInputUrl(e.target.value)
+						}
+					/>
+					<Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
+					<Button
+						disabled={isLoading}
+						onClick={handleExpand}
+						variant="default"
+						size="sm"
+						className="absolute right-1 top-1/2 transform -translate-y-1/2"
+					>
+						Expand
+					</Button>
+				</div>
+			</div>
 
 			<main className="container mx-auto flex flex-col lg:flex-row gap-6">
 				<Card className="flex-grow">
