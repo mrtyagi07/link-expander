@@ -59,7 +59,7 @@ export function Dashboard() {
 	return (
 		<div className="min-h-screen bg-background text-foreground p-4">
 			<header className="border-b mb-6">
-				<div className="container mx-auto py-4 flex flex-col sm:flex-row items-center justify-between">
+				<div className="container mx-auto flex items-center justify-between">
 					<motion.div
 						className="flex items-center space-x-2 mb-4 sm:mb-0"
 						initial={{ opacity: 0, x: -20 }}
@@ -84,7 +84,7 @@ export function Dashboard() {
 				<div className="relative max-w-2xl mx-auto">
 					<Input
 						type="text"
-						placeholder="Enter shortened link..."
+						placeholder="Enter a shortened or full URL"
 						className="w-full pl-10 pr-24 py-2 text-base"
 						value={inputUrl}
 						onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
@@ -251,7 +251,8 @@ export function Dashboard() {
 									exit={{ opacity: 0 }}
 									className="text-center text-base text-muted-foreground"
 								>
-									Enter a shortened link and click "Expand" to see the results.
+									Enter a shortened link or full URL and click "Expand" to see
+									the extended URL and safety results.
 								</motion.p>
 							)}
 						</AnimatePresence>
