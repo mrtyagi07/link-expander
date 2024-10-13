@@ -10,6 +10,12 @@ export const metadata: Metadata = {
 	title: "LinkPower - Expand and Analyze URLs",
 	description:
 		"Expand shortened links, analyze their safety, and preview content with LinkPower.",
+	twitter: {
+		card: "summary_large_image",
+		title: "LinkPower - Expand and Analyze URLs",
+		description:
+			"Expand shortened links, analyze their safety, and preview content with LinkPower.",
+	},
 };
 
 export default function RootLayout({
